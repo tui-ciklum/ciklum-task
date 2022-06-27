@@ -2,7 +2,7 @@
 sudo su
 yum -y update
 yum -y install httpd
-echo "<p> My Instance! </p>" >> /var/www/html/index.html
+echo "<p> welcome to ciklum </p>" >> /var/www/html/index.html
 sudo systemctl enable httpd
 sudo systemctl start httpd
 EOF
