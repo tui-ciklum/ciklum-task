@@ -1,5 +1,5 @@
  
-# Creating VPC,Subnets,routetables GW , Natgatway and subnet association Etc.....
+# Creating VPC,Subnets,routetables Gateway, Natgatway and subnet association Etc.....
 resource "aws_vpc" "awslab-vpc" {
   cidr_block           = var.vpc_cidr
   instance_tenancy     = "default"
