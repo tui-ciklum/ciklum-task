@@ -1,3 +1,4 @@
+### This is Variable which we have Defined ####################
 variable "region" {
   default = "eu-central-1"
 }
