@@ -1,4 +1,4 @@
-###Deploying instances, keys and IP outputs############### 
+###Deploying web and Db instances, keys and IP outputs############### 
 resource "aws_instance" "Webserver" {
   ami = data.aws_ami.amzon.id
   instance_type = var.instance_type
