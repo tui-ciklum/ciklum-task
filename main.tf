@@ -6,7 +6,7 @@ resource "aws_instance" "Webserver" {
   vpc_security_group_ids = [aws_security_group.awslab-vpc-sg.id]
   associate_public_ip_address = true
   key_name = var.key_name
-  user_data = "${file("httpd.sh")}"
+   user_data = file("httpd.sh")
 
   tags = {
     Name = "Webserver"
@@ -14,7 +14,7 @@ resource "aws_instance" "Webserver" {
     customer = "TUI"
   }
   provisioner "local-exec" {
-  command = "chmod 400 /home/latheef/latheef-ciklum.bak/ec2Key-dev.pem"
+  command = "chmod 400 /home/ec2-user/task/ec2Key-dev.pem"
 }
   provisioner "local-exec" {
 command = "scp -o StrictHostKeyChecking=no -i ec2Key-dev.pem ec2Key-dev.pem ec2-user@${aws_instance.Webserver.public_ip}:/home/ec2-user"
@@ -54,7 +54,7 @@ resource "aws_instance" "db-server" {
   vpc_security_group_ids = [aws_security_group.awslab-vpc-db_sg.id]
   associate_public_ip_address = false
   key_name = var.key_name
-  user_data = "${file("mariadb.sh")}" 
+  user_data = file("mariadb.sh")
   
 
   tags = {
